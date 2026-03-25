@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- App Grid Item -->
+    <style name="AppGridItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    
+    <!-- Tool Card -->
+    <style name="ToolCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">96dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/dark_card</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    <!-- Icon Container -->
+    <style name="IconContainer">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/circle_green_gradient</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <!-- Tool Icon -->
+    <style name="ToolIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="tint">@color/white</item>
+    </style>
+    
+    <!-- Edit Text Style -->
+    <style name="GreenEditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_disabled</item>
+        <item name="android:backgroundTint">@color/primary_green</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+    
+    <!-- Dialog Style -->
+    <style name="GreenDialog" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="android:background">@color/dark_card</item>
+        <item name="colorPrimary">@color/primary_green</item>
+        <item name="colorAccent">@color/accent_green</item>
+    </style>
+    
+    <!-- Popup Menu -->
+    <style name="GreenPopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:background">@color/dark_card</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    
+    <!-- Animation -->
+    <style name="FadeAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+    
+</resources>

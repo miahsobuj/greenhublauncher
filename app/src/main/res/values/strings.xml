@@ -1,0 +1,138 @@
+<resources>
+    <string name="app_name">GreenHub Launcher</string>
+    
+    <!-- Home Screen -->
+    <string name="search_apps">Search apps...</string>
+    <string name="no_apps_found">No apps found</string>
+    <string name="remove_from_home">Remove from home</string>
+    <string name="app_info">App info</string>
+    <string name="uninstall">Uninstall</string>
+    
+    <!-- Tools -->
+    <string name="file_manager">File Manager</string>
+    <string name="calculator">Calculator</string>
+    <string name="browser">Browser</string>
+    <string name="notepad">Notepad</string>
+    <string name="video_downloader">Video Downloader</string>
+    <string name="music_player">Music Player</string>
+    <string name="phone">Phone</string>
+    <string name="contacts">Contacts</string>
+    <string name="settings">Settings</string>
+    
+    <!-- File Manager -->
+    <string name="internal_storage">Internal Storage</string>
+    <string name="sd_card">SD Card</string>
+    <string name="recent_files">Recent Files</string>
+    <string name="images">Images</string>
+    <string name="videos">Videos</string>
+    <string name="audio">Audio</string>
+    <string name="documents">Documents</string>
+    <string name="downloads">Downloads</string>
+    <string name="create_folder">Create Folder</string>
+    <string name="paste">Paste</string>
+    <string name="copy">Copy</string>
+    <string name="cut">Cut</string>
+    <string name="delete">Delete</string>
+    <string name="rename">Rename</string>
+    <string name="share">Share</string>
+    <string name="details">Details</string>
+    <string name="select_all">Select All</string>
+    <string name="new_folder_name">New folder name</string>
+    <string name="enter_name">Enter name</string>
+    <string name="empty_folder">Folder is empty</string>
+    
+    <!-- Calculator -->
+    <string name="calculator_title">Scientific Calculator</string>
+    <string name="clear">C</string>
+    <string name="delete_last">⌫</string>
+    <string name="equals">=</string>
+    <string name="division">÷</string>
+    <string name="multiply">×</string>
+    <string name="subtract">−</string>
+    <string name="add">+</string>
+    <string name="percent">%</string>
+    <string name="sin">sin</string>
+    <string name="cos">cos</string>
+    <string name="tan">tan</string>
+    <string name="log">log</string>
+    <string name="ln">ln</string>
+    <string name="sqrt">√</string>
+    <string name="power">^</string>
+    <string name="pi">π</string>
+    <string name="e">e</string>
+    <string name="open_bracket">(</string>
+    <string name="close_bracket">)</string>
+    
+    <!-- Browser -->
+    <string name="enter_url">Enter URL or search...</string>
+    <string name="reload">Reload</string>
+    <string name="back">Back</string>
+    <string name="forward">Forward</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="history">History</string>
+    <string name="add_bookmark">Add Bookmark</string>
+    
+    <!-- Notepad -->
+    <string name="new_note">New Note</string>
+    <string name="note_title">Title</string>
+    <string name="note_content">Write your note here...</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
+    <string name="delete_note">Delete note?</string>
+    <string name="confirm_delete">Are you sure?</string>
+    <string name="last_edited">Last edited: %1$s</string>
+    
+    <!-- Video Downloader -->
+    <string name="paste_url">Paste video URL...</string>
+    <string name="download">Download</string>
+    <string name="paste">Paste</string>
+    <string name="quality">Quality</string>
+    <string name="format">Format</string>
+    <string name="downloading">Downloading...</string>
+    <string name="download_complete">Download complete</string>
+    <string name="downloads_folder">Downloads Folder</string>
+    <string name="supported_sites">YouTube, Instagram, Facebook, Twitter, TikTok, Reddit</string>
+    
+    <!-- Music Player -->
+    <string name="now_playing">Now Playing</string>
+    <string name="playlist">Playlist</string>
+    <string name="artists">Artists</string>
+    <string name="albums">Albums</string>
+    <string name="songs">Songs</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="repeat">Repeat</string>
+    <string name="repeat_one">Repeat One</string>
+    <string name="equalizer">Equalizer</string>
+    <string name="bass_boost">Bass Boost</string>
+    <string name="virtualizer">Virtualizer</string>
+    <string name="preset">Preset</string>
+    <string name="custom">Custom</string>
+    <string name="no_songs">No songs found</string>
+    
+    <!-- Phone -->
+    <string name="dial_pad">Dial Pad</string>
+    <string name="recents">Recents</string>
+    <string name="contacts_list">Contacts</string>
+    <string name="call">Call</string>
+    <string name="end_call">End Call</string>
+    <string name="speaker">Speaker</string>
+    <string name="mute">Mute</string>
+    <string name="hold">Hold</string>
+    
+    <!-- Contacts -->
+    <string name="add_contact">Add Contact</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="no_contacts">No contacts</string>
+    
+    <!-- Common -->
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="loading">Loading...</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+</resources>

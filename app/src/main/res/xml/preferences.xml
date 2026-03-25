@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="Appearance"
+        android:key="category_appearance">
+
+        <ListPreference
+            android:key="grid_columns"
+            android:title="Grid columns"
+            android:summary="Number of app columns in the grid"
+            android:defaultValue="4"
+            android:entries="@array/grid_columns"
+            android:entryValues="@array/grid_columns_values" />
+
+        <SwitchPreferenceCompat
+            android:key="show_clock"
+            android:title="Show clock"
+            android:summary="Display date and time on home screen"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="dark_mode"
+            android:title="Dark mode"
+            android:summary="Enable dark theme throughout the app"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Behavior"
+        android:key="category_behavior">
+
+        <SwitchPreferenceCompat
+            android:key="vibration_feedback"
+            android:title="Vibration"
+            android:summary="Enable haptic feedback"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="auto_refresh"
+            android:title="Auto refresh"
+            android:summary="Automatically refresh app list when returning from apps"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="About"
+        android:key="category_about">
+
+        <Preference
+            android:key="version"
+            android:title="Version"
+            android:summary="1.0.0"
+            android:selectable="false" />
+
+        <Preference
+            android:key="privacy"
+            android:title="Privacy Policy"
+            android:summary="Read our privacy policy"
+            android:icon="@drawable/ic_note" />
+
+        <Preference
+            android:key="license"
+            android:title="License"
+            android:summary="Open source licenses" />
+
+        <Preference
+            android:key="rate_app"
+            android:title="Rate on Play Store"
+            android:summary="If you enjoy GreenHub, please rate it!" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

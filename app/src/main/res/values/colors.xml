@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Green Palette -->
+    <color name="primary_green">#2E7D32</color>
+    <color name="primary_green_dark">#1B5E20</color>
+    <color name="primary_green_light">#4CAF50</color>
+    <color name="accent_green">#66BB6A</color>
+    <color name="light_green">#81C784</color>
+    <color name="pale_green">#C8E6C9</color>
+    <color name="mint_green">#A5D6A7</color>
+    <color name="emerald_green">#00BFA5</color>
+    <color name="neon_green">#76FF03</color>
+    <color name="forest_green">#33691E</color>
+    
+    <!-- Backgrounds -->
+    <color name="dark_bg">#121212</color>
+    <color name="dark_bg_elevated">#1E1E1E</color>
+    <color name="dark_card">#2D2D2D</color>
+    <color name="surface_dark">#1C1C1C</color>
+    <color name="surface_green_tint">#1B261B</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3B3B3</color>
+    <color name="text_disabled">#666666</color>
+    <color name="text_green">#4CAF50</color>
+    
+    <!-- Status Colors -->
+    <color name="success_green">#00C853</color>
+    <color name="warning_orange">#FFAB00</color>
+    <color name="error_red">#FF5252</color>
+    <color name="info_blue">#448AFF</color>
+    
+    <!-- Gradient Colors -->
+    <color name="gradient_green_start">#1B5E20</color>
+    <color name="gradient_green_end">#2E7D32</color>
+    <color name="gradient_neon_start">#00C853</color>
+    <color name="gradient_neon_end">#76FF03</color>
+    
+    <!-- Glass Effect -->
+    <color name="glass_white">#20FFFFFF</color>
+    <color name="glass_green">#202E7D32</color>
+    
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_dark">#CC121212</color>
+    
+    <!-- Standard Android Colors -->
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+</resources>

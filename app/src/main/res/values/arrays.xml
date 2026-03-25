@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="grid_columns">
+        <item>3 columns</item>
+        <item>4 columns</item>
+        <item>5 columns</item>
+        <item>6 columns</item>
+    </array>
+
+    <array name="grid_columns_values">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </array>
+</resources>

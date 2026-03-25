@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/dark_card"
+    android:padding="8dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="App Options"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_margin="16dp" />
+
+    <!-- Open -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/option_open"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="8dp"
+        android:text="Open"
+        android:textAllCaps="false"
+        android:textColor="@color/text_primary"
+        android:textAlignment="textStart"
+        android:gravity="start|center_vertical"
+        android:background="?attr/selectableItemBackground"
+        app:icon="@drawable/ic_launcher_green"
+        app:iconTint="@color/accent_green"
+        app:iconGravity="start"
+        app:iconPadding="16dp"
+        style="@style/Widget.Material3.Button.TextButton" />
+
+    <!-- App Info -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/option_info"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="8dp"
+        android:text="@string/app_info"
+        android:textAllCaps="false"
+        android:textColor="@color/text_primary"
+        android:textAlignment="textStart"
+        android:gravity="start|center_vertical"
+        android:background="?attr/selectableItemBackground"
+        app:icon="@drawable/ic_settings"
+        app:iconTint="@color/accent_green"
+        app:iconGravity="start"
+        app:iconPadding="16dp"
+        style="@style/Widget.Material3.Button.TextButton" />
+
+    <!-- Uninstall -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/option_uninstall"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="8dp"
+        android:text="@string/uninstall"
+        android:textAllCaps="false"
+        android:textColor="@color/error_red"
+        android:textAlignment="textStart"
+        android:gravity="start|center_vertical"
+        android:background="?attr/selectableItemBackground"
+        app:icon="@drawable/ic_delete"
+        app:iconTint="@color/error_red"
+        app:iconGravity="start"
+        app:iconPadding="16dp"
+        style="@style/Widget.Material3.Button.TextButton" />
+
+</LinearLayout>
