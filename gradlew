@@ -5,7 +5,7 @@ set -e
 APP_NAME="Gradle"
 APP_BASE_NAME="${0##*/}"
 
-DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
+DEFAULT_JVM_OPTS=-Xmx64m -Xms64m
 
 # Find java
 if [ -n "$JAVA_HOME" ] ; then
@@ -41,10 +41,15 @@ if [ ! -f "$WRAPPER_JAR" ]; then
 fi
 
 # Collect all arguments
-set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
+if [ -n "$JAVA_OPTS" ]; then
+  JAVA_OPTS="$DEFAULT_JVM_OPTS $JAVA_OPTS"
+else
+  JAVA_OPTS="$DEFAULT_JVM_OPTS"
+fi
 
 # Execute Gradle
 exec "$JAVACMD" \
+  $JAVA_OPTS \
   "-classpath" "$WRAPPER_JAR" \
   org.gradle.wrapper.GradleWrapperMain \
   "$@"
