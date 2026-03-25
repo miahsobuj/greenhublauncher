@@ -18,6 +18,8 @@ if ! command -v java &> /dev/null; then
 fi
 
 JAVA_VERSION=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
+# Accept arm64 as alternative to aarch64 for Android NDK
+export NDK_HOST_TAG=linux-arm64
 echo "✅ Java version: $JAVA_VERSION"
 
 # Check Android SDK
