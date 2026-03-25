@@ -85,7 +85,6 @@
     <!-- Video Downloader -->
     <string name="paste_url">Paste video URL...</string>
     <string name="download">Download</string>
-    <string name="paste">Paste</string>
     <string name="quality">Quality</string>
     <string name="format">Format</string>
     <string name="downloading">Downloading...</string>
