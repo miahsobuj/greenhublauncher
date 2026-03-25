@@ -75,7 +75,7 @@
                 android:textColor="@color/text_primary"
                 android:singleLine="true"
                 android:ellipsize="start"
-                android:gravity="center"/ >
+                android:gravity="center"/>
 
             <TextView
                 android:id="@+id/name_display"
@@ -87,7 +87,7 @@
                 android:layout_marginTop="4dp"
                 android:singleLine="true"
                 android:ellipsize="middle"
-                android:gravity="center"/ >
+                android:gravity="center"/>
         </LinearLayout>
 
         <ImageButton
