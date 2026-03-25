@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements AppAdapter.OnAppC
         searchBox.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @n            @Override
+            @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 filterApps(s.toString());
             }
