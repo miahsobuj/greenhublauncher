@@ -1,12 +1,11 @@
 #!/bin/sh
-
-# Gradle wrapper script
+# Gradle wrapper script - Fixed for CI/CD
+set -e
 
 APP_NAME="Gradle"
-APP_BASE_NAME=`basename "$0"`
+APP_BASE_NAME="${0##*/}"
 
-# Add default JVM options here
-DEFAULT_JVM_OPTS="-Xmx64m -Xms64m"
+DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
 
 # Find java
 if [ -n "$JAVA_HOME" ] ; then
@@ -16,17 +15,36 @@ if [ -n "$JAVA_HOME" ] ; then
         JAVACMD="$JAVA_HOME/bin/java"
     fi
     if [ ! -x "$JAVACMD" ] ; then
-        die "ERROR: JAVA_HOME is set to an invalid directory"
+        echo "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME" >&2
+        echo "Please set the JAVA_HOME variable in your environment to match the location of your Java installation." >&2
+        exit 1
     fi
 else
-    JAVACMD="java"
-    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found"
+    JAVACMD=java
+    command -v java >/dev/null 2>&1 || { 
+        echo "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH." >&2
+        echo "Please set the JAVA_HOME variable in your environment to match the location of your Java installation." >&2
+        exit 1
+    }
 fi
 
-# Setup classpath
-CLASSPATH=/root/.gradle/wrapper/dists/gradle-8.2-bin/8.2/gradle-8.2/lib/plugins/gradle-wrapper.jar
+# Get the directory of this script
+APP_HOME="$(cd "$(dirname "$0")" && pwd)"
 
-# Download gradle if not exists
-GRADLE_DIST="https\://services.gradle.org/distributions/gradle-8.2-bin.zip"
+# Use the wrapper jar from gradle/wrapper folder
+WRAPPER_JAR="$APP_HOME/gradle/wrapper/gradle-wrapper.jar"
 
-exec "$JAVACMD" $DEFAULT_JVM_OPTS -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
+if [ ! -f "$WRAPPER_JAR" ]; then
+    echo "Wrapper jar not found at $WRAPPER_JAR" >&2
+    echo "The gradle-wrapper.jar file must be committed to the repository." >&2
+    exit 1
+fi
+
+# Collect all arguments
+set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
+
+# Execute Gradle
+exec "$JAVACMD" \
+  "-classpath" "$WRAPPER_JAR" \
+  org.gradle.wrapper.GradleWrapperMain \
+  "$@"
