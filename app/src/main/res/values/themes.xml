@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
+    <!-- Base GreenHub style -->
+    <style name="GreenHub">
+    </style>
+    
     <!-- Base Theme -->
     <style name="Theme.GreenHub" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Primary Colors -->
@@ -98,13 +102,13 @@
         <item name="android:textColor">@color/text_primary</item>
     </style>
     
-    <style name="GreenHub.Text.Headline">
+    <style name="GreenHub.Text.Headline" parent="GreenHub.Text">
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/text_primary</item>
     </style>
     
-    <style name="GreenHub.Text.Body">
+    <style name="GreenHub.Text.Body" parent="GreenHub.Text">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/text_secondary</item>
     </style>
