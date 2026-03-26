@@ -63,7 +63,10 @@
                     android:text="Built-in Tools"
                     android:textSize="14sp"
                     android:textColor="@color/text_secondary"
-                    android:padding="16dp 16dp 8dp 16dp"/>
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="8dp"/>
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/tools_pager"
