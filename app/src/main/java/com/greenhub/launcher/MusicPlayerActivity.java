@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.ContentResolver;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -21,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.greenhub.launcher.models.Song;
 
 import java.util.ArrayList;
 import java.util.List;
