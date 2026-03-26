@@ -16,6 +16,7 @@
     <color name="dark_bg">#121212</color>
     <color name="dark_bg_elevated">#1E1E1E</color>
     <color name="dark_card">#2D2D2D</color>
+    <color name="dark_surface">#1C1C1C</color>
     <color name="surface_dark">#1C1C1C</color>
     <color name="surface_green_tint">#1B261B</color>
     
