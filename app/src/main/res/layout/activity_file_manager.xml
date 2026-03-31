@@ -62,6 +62,26 @@
         android:ellipsize="middle"
         android:singleLine="true" />
 
+    <!-- Storage Usage -->
+    <LinearLayout
+        android:id="@+id/storage_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@color/dark_bg_elevated">
+
+        <TextView
+            android:id="@+id/storage_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Storage: --"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary" />
+
+    </LinearLayout>
+
     <!-- File List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_files"

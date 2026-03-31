@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
+import java.util.Locale;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -81,8 +82,13 @@ public class FileUtils {
     }
     
     public static String formatFileSize(long size) {
+        if (size <= 0) return "0 B";
         if (size < 1024) return size + " B";
         int exp = (int) (Math.log(size) / Math.log(1024));
+        // Ensure we don't exceed the units array bounds
+        if (exp >= "KMGTPE".length()) {
+            exp = "KMGTPE".length() - 1;
+        }
         String units = "KMGTPE".charAt(exp - 1) + "B";
         return String.format(Locale.getDefault(), "%.1f %s", size / Math.pow(1024, exp), units);
     }

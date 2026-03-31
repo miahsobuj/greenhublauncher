@@ -1,6 +1,7 @@
 package com.greenhub.launcher;
 
 import android.Manifest;
+import android.content.Context;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -44,6 +45,8 @@ public class FileManagerActivity extends AppCompatActivity implements FileAdapte
     private LinearLayout emptyView;
     private TextView currentPathText;
     private ImageView backButton;
+    private TextView storageText;
+    private LinearLayout storageLayout;
     
     private List<FileItem> fileList = new ArrayList<>();
     private File currentDirectory;
@@ -68,11 +71,13 @@ public class FileManagerActivity extends AppCompatActivity implements FileAdapte
         emptyView = findViewById(R.id.empty_view);
         currentPathText = findViewById(R.id.current_path);
         backButton = findViewById(R.id.btn_back);
-        
+        storageText = findViewById(R.id.storage_text);
+        storageLayout = findViewById(R.id.storage_layout);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        
+
         backButton.setOnClickListener(v -> goBack());
-        
+
         FloatingActionButton fab = findViewById(R.id.fab_new_folder);
         fab.setOnClickListener(v -> showNewFolderDialog());
     }
@@ -86,11 +91,11 @@ public class FileManagerActivity extends AppCompatActivity implements FileAdapte
                 startActivityForResult(intent, STORAGE_PERMISSION_CODE);
             }
         } else {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) 
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, 
-                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, 
-                                    Manifest.permission.WRITE_EXTERNAL_STORAGE}, 
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
+                                    Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         STORAGE_PERMISSION_CODE);
             } else {
                 loadFiles(ROOT_PATH);
@@ -101,10 +106,10 @@ public class FileManagerActivity extends AppCompatActivity implements FileAdapte
     private void loadFiles(String path) {
         currentDirectory = new File(path);
         currentPathText.setText(getDisplayPath(path));
-        
+
         fileList.clear();
         File[] files = currentDirectory.listFiles();
-        
+
         if (files != null) {
             for (File file : files) {
                 if (!file.isHidden()) {
@@ -112,17 +117,18 @@ public class FileManagerActivity extends AppCompatActivity implements FileAdapte
                 }
             }
         }
-        
+
         Collections.sort(fileList, (a, b) -> {
             if (a.isDirectory() != b.isDirectory()) {
                 return a.isDirectory() ? -1 : 1;
             }
             return a.getName().compareToIgnoreCase(b.getName());
         });
-        
+
         fileAdapter = new FileAdapter(this, fileList, this);
         recyclerView.setAdapter(fileAdapter);
         updateEmptyView();
+        updateStorageInfo();
     }
     
     private String getDisplayPath(String path) {
@@ -130,6 +136,37 @@ public class FileManagerActivity extends AppCompatActivity implements FileAdapte
             return "Internal Storage";
         }
         return path.replace(ROOT_PATH, "Internal Storage");
+    }
+
+    private void updateStorageInfo() {
+        if (currentDirectory != null) {
+            long totalSpace = currentDirectory.getTotalSpace();
+            long freeSpace = currentDirectory.getFreeSpace();
+            long usedSpace = totalSpace - freeSpace;
+
+            String storageInfo = String.format(
+                "Storage: %s used of %s",
+                formatFileSize(usedSpace),
+                formatFileSize(totalSpace)
+            );
+
+            storageText.setText(storageInfo);
+
+            // Show storage usage as a percentage (avoid division by zero)
+            if (totalSpace > 0) {
+                int usagePercent = (int) ((usedSpace * 100) / totalSpace);
+                if (usagePercent > 90) {
+                    storageText.setTextColor(ContextCompat.getColor(this, R.color.error_red));
+                } else if (usagePercent > 75) {
+                    storageText.setTextColor(ContextCompat.getColor(this, R.color.warning_orange));
+                } else {
+                    storageText.setTextColor(ContextCompat.getColor(this, R.color.text_secondary));
+                }
+            } else {
+                // If we can't get total space, use default text color
+                storageText.setTextColor(ContextCompat.getColor(this, R.color.text_secondary));
+            }
+        }
     }
     
     private void updateEmptyView() {
